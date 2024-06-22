@@ -26,19 +26,25 @@ ul
    
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
 }
-@media (min-width:300px)
+@media (min-width:350px)
 {
-   .container{
-    overflow-x: hidden;
-   }
-    
+    .container{
+        width: 300px;
+    }
+    .main-title{
+        font-size: 25px;
+    }
+
 }
+
 @media (min-width:768px)
 {
     .container
     {
         width: 750px;
+    
     }
     
 }
@@ -158,6 +164,13 @@ header .container ul li a:hover::before
 {
     left: 0;
 }
+header .container .main-list li:last-child:hover .mega-list
+{
+    z-index: 200;
+    opacity: 1;
+   top: calc(100% + 1px);
+   
+}
 header .container .mega-list{
     position: absolute;
     width: 100%;
@@ -191,12 +204,7 @@ header .container .mega-list{
         border-bottom: 1px solid rgb(233, 230, 230);
     }
 }
-header .container .main-list li:last-child:hover .mega-list
-{
-    z-index: 200;
-    opacity: 1;
-    top: 100%;
-}
+
 
 header .container .mega-list img{
     max-width: 100%;
@@ -377,9 +385,14 @@ header .container .mega-list .links li i
     transition-delay: 0.3s;
     z-index: 1;
     text-align: center;
- 
 
 } 
+@media (min-width:300px)
+{
+    .main-title{
+        font-size: 25px;
+    }
+}
 .main-title:hover{
     color: white;
   border: 2px solid white;
@@ -394,21 +407,7 @@ header .container .mega-list .links li i
    
 }
 
-.main-title:hover::after
 
-{
-    width: 52%;
-    height: 100%;
-    right: -45px;
-    border-radius: 0;
- 
-}
-.main-title:hover::before{
-    width: 52%;
-    height: 100%;
-    left: 45px;
-    border-radius: 0;
-}
 .main-title::after
 {
     content: "";
@@ -816,16 +815,7 @@ header .container .mega-list .links li i
     position: relative;
     background-color: var(--section-background);
 }
-.testimonials .main-title:hover::before
-{
-    width: 54%;
-    left:70px;
-}
-.testimonials .main-title:hover::after
-{
-    width:54%;
-    right: -70px;
-}
+
 .testimonials .container{
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
@@ -937,14 +927,7 @@ header .container .mega-list .links li i
    
     transition: var(--main-transition);
 }
-.team-members .main-title:hover::before 
-{
-    left: 80px;
-}
-.team-members .main-title:hover::after
-{
-    right: -71px;
-}
+
 .team-members .container .box .data{
     display: flex;
     align-items: center;
@@ -1148,13 +1131,7 @@ header .container .mega-list .links li i
     position: relative;
     background-color: var(--section-background);
 }
-.work-steps .main-title:hover::after{
-    right: -75px;
-}
-.work-steps .main-title:hover::before
-{
-    left: 64px;
-}
+
 .work-steps .container
 {
     display: flex;
@@ -1281,6 +1258,17 @@ header .container .mega-list .links li i
     text-align: center;
     transition: var(--main-transition);
 }
+@media (min-width:350px)
+{
+    .events .container .content .info .days,
+.events .container .content .info .hours,
+.events .container .content .info .minutes,
+.events .container .content .info .seconds
+{
+    width: 56px;
+}
+    
+}
 
 .events .container .content .info .days:hover,
 .events .container .content .info .hours:hover,
@@ -1306,6 +1294,16 @@ header .container .mega-list .links li i
     flex-direction: column;
     font-size: 35px;
     font-weight: bold;
+}
+@media (min-width:300px)
+{
+    .events .container .content .info .days span:not(:last-child),
+.events .container .content .info .hours span:not(:last-child),
+.events .container .content .info .minutes span:not(:last-child),
+.events .container .content .info .seconds span:not(:last-child)
+{
+    font-size: 28px;
+}
 }
 
 .events .container .content .info .days span:last-child,
@@ -1424,13 +1422,7 @@ header .container .mega-list .links li i
     position: relative;
     background-color: var(--section-background);
 }
-.pricing .main-title:hover::after{
-    right: -75px;
-}
-.pricing .main-title:hover::before
-{
-    left: 64px;
-}
+
 .pricing .container
 {
     display: grid;
@@ -1950,3 +1942,19 @@ header .container .mega-list .links li i
     border-top: 1px solid #444;
 }
 /* end footer */
+
+
+
+.main-title:hover::before {
+    width: 60%;
+    height: 100%;
+    left: 45px;
+    border-radius: 0;
+}
+.main-title:hover::after {
+    width: 60%;
+    height: 100%;
+    right: -75px;
+
+    border-radius: 0;
+}
